@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Hello World | Hexo</title>
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
+    <title>博客搭建 | 铃の小屋</title>
+    <meta name="author" content="Kaeri bana" />
+    <meta name="description" content="童话永存，无所不能…" />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
@@ -57,7 +57,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>HEXO</span>
+            <span>铃の小屋</span>
         </a>
         
         <a href="/">
@@ -89,7 +89,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
+            <span>&emsp;铃の小屋</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -150,33 +150,46 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Hello World</h1>
+        <h1>博客搭建</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/24
+            2023/12/25
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>这是一篇零基础萌新搭建博客的记录，目的是方便自己查阅，所以解释和步骤较为简略。<br>值得一提的是，虽然博客的主题是<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/05/10/hexo-theme-particlex/">ParticleX</a>，不过搭建过程参考的是<a target="_blank" rel="noopener" href="https://www.fomal.cc/">Fomalhaut</a>的<a target="_blank" rel="noopener" href="https://www.fomal.cc/posts/e593433d.html">博客搭建文章</a>。在此对两者表示感谢~</p>
+<span id="more"></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="一、博客搭建"><a href="#一、博客搭建" class="headerlink" title="一、博客搭建"></a>一、博客搭建</h2><p>1、前置安装git和node.js，命令行输入<code>git --version</code>和<code>node --version</code>检验是否安装成功。  </p>
+<p>2、部署过程<br>依顺序如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo #安装hexo</span><br><span class="line">hexo init </span><br><span class="line">npm install #安装依赖</span><br><span class="line">hexo generate&amp;&amp;hexo server #构建并且预览服务</span><br><span class="line">```  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git config –global user.email “<a href="mailto:&#121;&#111;&#117;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#121;&#111;&#117;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a>” #github注册邮箱<br>git config –global user.name “Your Name” #github用户名<br>ssh-keygen -t rsa -C “xxxxxx@xxx” #生成密钥，””内输入自己github邮箱地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 去对应目录C:\Users\Y\ .ssh复制.pub里面的密钥</span><br><span class="line">* 去github添加密钥</span><br><span class="line">* 打开_config.yml文件，在deployment项添加或更改为：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>type: git<br>repo: 自己新建的github仓库地址<br>branch: main</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm install hexo-deployer-git –save # 安装插件<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy<br>hexo clean; hexo generate; hexo deploy  # 上传本地内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 二、博客主题</span><br><span class="line"></span><br><span class="line">1、下载主题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>cd themes<br>git clone <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex.git">https://github.com/theme-particlex/hexo-theme-particlex.git</a> particlex –depth&#x3D;1 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2、更改配置文件里面的theme为`theme: particlex`  </span><br><span class="line"></span><br><span class="line">3、更新github仓库的文件并部署</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>hexo clean<br>hexo generate<br>hexo deploy</p>
+<pre><code>
+## 博客写作
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+1、新建文章
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+`hexo new 文章名字`即可在_post生成对应包含默认信息的.md文件。
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+2、文章缩略
+
+`&lt;!-- more --&gt;`后面的内容将不会展示在文章预览页。
+</code></pre>
 
     </div>
     
@@ -192,11 +205,11 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Hexo
+            2022 - 2023 铃の小屋
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;Kaeri bana
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
